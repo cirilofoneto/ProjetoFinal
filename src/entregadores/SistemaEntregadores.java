@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class SistemaEntregadores {
 
 	public static void main(String[] args) {
+			
+		int vetores = 2;
+		
 		Scanner leitor = new Scanner(System.in);
-		String[] nomesEntregadores = new String[QUANTIDADE_ENTREGADORES];
-		String[] telefonesEntregadores = new String[QUANTIDADE_ENTREGADORES];
-		double[] avaliacoesEntregadores = new double[QUANTIDADE_ENTREGADORES];
+		String[] nomesEntregadores = new String[vetores];
+		String[] telefonesEntregadores = new String[vetores];
+		double[] avaliacoesEntregadores = new double[vetores];
 		int opcao = 0;
 		String usuario, senha;
 		System.out.println("Para entrar no sistema você deve informar seu usuário e sua senha");
@@ -26,7 +29,7 @@ public class SistemaEntregadores {
 		
 		
 		
-		while(opcao!=4) {
+		while(opcao!=5) {
 			FuncoesEntregadores.exibirMenu();
 			opcao = leitor.nextInt();
 			
@@ -34,23 +37,25 @@ public class SistemaEntregadores {
 			case 1:
 				//Cadastrar os 20 entregadores da plataforma, pela funcao.
 				//Dentro do loop que solicita a digitação dos dados de cada entregador, chamar a funcao abaixo
-				FuncoesEntregadores.cadastrarEntregador(nomesEntregadores, telefonesEntregadores, avaliacoesEntregadores, novoNome, novoTelefone, novaAvaliacao);
+				FuncoesEntregadores.cadastrarEntregador(nomesEntregadores, telefonesEntregadores, avaliacoesEntregadores);
 				break;
 				
 			case 2:
 				//Alterar a avaliação de um entregador pelo nome
-				FuncoesEntregadores.alterarAvaliacao(nomesEntregadores, avaliacoesEntregadores, novaAvaliacao);
+				FuncoesEntregadores.alterarAvaliacao(nomesEntregadores, avaliacoesEntregadores);
 				break;
 				
 			case 3:
-				//Exibir o nome e telefone do entregador mais bem avaliado
+				
 				FuncoesEntregadores.melhorAvaliado(nomesEntregadores, telefonesEntregadores, avaliacoesEntregadores);
 				break;
 			case 4:
-				//Mensagem de saída
+				FuncoesEntregadores.lista(nomesEntregadores, telefonesEntregadores, avaliacoesEntregadores);
 				break;	
+			case 5:
+				System.out.println("Sair");
 			default:
-				//Mensagem de opção inválida
+				System.out.println("Seleçao Invalida");
 				break;
 				
 			}
