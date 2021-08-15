@@ -8,6 +8,7 @@ public class SistemaEntregadores {
 			
 		int vetores = 2;
 		
+		
 		Scanner leitor = new Scanner(System.in);
 		String[] nomesEntregadores = new String[vetores];
 		String[] telefonesEntregadores = new String[vetores];

@@ -65,23 +65,19 @@ public class FuncoesEntregadores {
 	public static void melhorAvaliado(String entregadoresNome[], String entregadoresTelefon[],
 			double entregadoresAvaliacao[]) {
 		
-	
+		double avaliacao =0;
+		int pocicao = 0;
 		
-		
-		
-
 		for (int cont = 0; cont < entregadoresNome.length; cont++) {
 			
 			if (avaliacao < entregadoresAvaliacao[cont]) {
-				double avaliacao = entregadoresAvaliacao[cont];
-				System.out.println("Colaborador com Maior Nota: " + entregadoresAvaliacao[cont] + "Nome: " + entregadoresNome[cont]
-						+ "Telefone: " + entregadoresTelefon[cont]);
+				 avaliacao = entregadoresAvaliacao[cont];
+				 pocicao = cont;
 
 			}
-
-
 		}
-
+		System.out.println("Colaborador com Maior Nota: " + entregadoresAvaliacao[pocicao] + "Nome: " + entregadoresNome[pocicao]
+				+ "Telefone: " + entregadoresTelefon[pocicao]);
 	}
 	public static void lista(String entregadoresNome[], String entregadoresTelefon[], double entregadoresAvaliacao[]) { 
 		
